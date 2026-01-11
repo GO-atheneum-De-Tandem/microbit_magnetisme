@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>micro:bit magnetometer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/microbit.umd.js"></script>
+</head>
+<body>
+    <header>
+        <h1>micro:bit magnetometer live</h1>
+        <div class="controls">
+            <button id="connectButton">Select micro:bit</button>
+            <button id="calibrateButton" disabled>Calibrate Zero</button>
+            <button id="resetButton" disabled>Reset Zero</button>
+            <button id="disconnectButton" disabled>Disconnect</button>
+            <div class="status" id="status"><span class="dot" id="dot"></span><span id="statusLabel">Not connected</span></div>
+        </div>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <div class="metric">Heading (°) <strong id="headingVal">-</strong></div>
+            <div class="metric">Strength (µT) <strong id="strengthVal">-</strong></div>
+            <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:8px 0">
+            <div class="metric">Δ Heading (°) <strong id="dheadingVal">-</strong></div>
+            <div class="metric">Δ Strength (µT) <strong id="dstrengthVal">-</strong></div>
+            <div id="message"></div>
+        </div>
+        <div class="card" id="canvasWrapper">
+            <canvas id="viz"></canvas>
+        </div>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>
