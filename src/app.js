@@ -242,8 +242,6 @@ async function connect() {
             if (text.includes('H:')) {
                 const match = text.match(/H:(\d+\.?\d*),S:(\d+\.?\d*)/);
                 if (match) {
-                    console.log('Parsed with labels');
-                    console.log(match[1], match[2]);
                     heading = parseFloat(match[1]);
                     strength = parseFloat(match[2]);
                 }
